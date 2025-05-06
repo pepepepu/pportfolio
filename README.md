@@ -31,8 +31,8 @@ O **PPortfolio** é muito mais que um portfólio pessoal — é a **vitrine da m
 Quer trocar uma ideia, fazer um projeto comigo ou só elogiar o site? 😄  
 Aqui vão minhas redes:
 
-- 📧 Email: [coloque seu email aqui]
-- 💼 LinkedIn: [coloque seu linkedin aqui]
+- 📧 Email: spedrobreno.2012@hotmail.com
+- 💼 LinkedIn: https://www.linkedin.com/in/pp-oliveira/
 
 ---
 
