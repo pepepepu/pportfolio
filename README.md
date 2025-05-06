@@ -1,58 +1,39 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# PPortfolio 🌐✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Olá! Meu nome é Pedro Paulo — mas pode me chamar de **PP** (pra quem é de casa 😎).
 
-Currently, two official plugins are available:
+Sou estudante de Engenharia de Computação pela Universidade Federal de Sergipe e tenho 22 anos. Desde que me entendo por gente, sou completamente apaixonado por tudo que envolve estética — o famoso _aesthetic_. Essa paixão sempre se refletiu no meu jeito de me comunicar, de me expressar, de me vestir... e, claro, eu queria que ela também transbordasse nos meus projetos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Foi assim que me tornei desenvolvedor front-end.
 
-## Expanding the ESLint configuration
+Mais do que apenas programar, o que me move é a ideia de construir experiências visuais que **conectem**, que **comuniquem** algo, que tenham **personalidade**. Sou fascinado por como sites e apps conseguem transmitir sensações e contar histórias apenas com um layout bem pensado ou uma transição suave.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 💻 Sobre o projeto
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+O **PPortfolio** é muito mais que um portfólio pessoal — é a **vitrine da minha alma digital**. Aqui, cada pixel foi pensado com carinho pra representar quem eu sou, o que eu acredito e como enxergo o mundo através da estética e da tecnologia.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-=======
-# pportfolio
->>>>>>> 5697d0a43fdce853887b3b3e56fa757495af10a7
+### 🛠️ Tecnologias usadas
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+(E olha... eu manjo **muuuuuuuuuuito** mais coisa além disso, viu?)
+
+---
+
+### 📫 Contato
+
+Quer trocar uma ideia, fazer um projeto comigo ou só elogiar o site? 😄  
+Aqui vão minhas redes:
+
+- 📧 Email: [coloque seu email aqui]
+- 💼 LinkedIn: [coloque seu linkedin aqui]
+
+---
+
+Obrigado por visitar o PPortfolio. Espero que você sinta, mesmo que um pouquinho, o que eu quis passar aqui. 💜
