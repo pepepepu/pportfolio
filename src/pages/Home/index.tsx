@@ -18,7 +18,7 @@ const Home: React.FC = () => {
         justifyContent="center"
         gap="5px"
       >
-        <AnimatedTitle text="PPORTFÓLIO" loop={true} />
+        <AnimatedTitle text="PPORTFÓLIO" />
         <Text
           fontFamily={"Cormorant SC"}
           fontSize={"1.5rem"}
