@@ -1,5 +1,4 @@
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import React, { useEffect, useRef } from "react";
 
 const getRandomImage = () => {
