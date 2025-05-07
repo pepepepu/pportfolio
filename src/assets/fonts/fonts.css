@@ -5,8 +5,6 @@
   font-style: normal;
 }
 
-/* src/styles/fonts.css */
-
 @font-face {
   font-family: "EB Garamond";
   src: url("./EbGaramond/EBGaramond-Regular.ttf") format("truetype");
@@ -75,4 +73,72 @@
   src: url("./EbGaramond/EBGaramond-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 800;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("./EbGaramond/EBGaramond-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+/* Cinzel Decorative */
+
+@font-face {
+  font-family: "Cinzel Decorative";
+  src: url("./CinzelDecorative/CinzelDecorative-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cinzel Decorative";
+  src: url("./CinzelDecorative/CinzelDecorative-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cinzel Decorative";
+  src: url("./CinzelDecorative/CinzelDecorative-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Comorant SC */
+
+@font-face {
+  font-family: "Cormorant SC";
+  src: url("./ComorantSC/CormorantSC-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant SC";
+  src: url("./ComorantSC/CormorantSC-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant SC";
+  src: url("./ComorantSC/CormorantSC-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant SC";
+  src: url("./ComorantSC/CormorantSC-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant SC";
+  src: url("./ComorantSC/CormorantSC-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
 }
