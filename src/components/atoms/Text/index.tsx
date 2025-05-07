@@ -13,6 +13,7 @@ interface TextProps {
   fontFamily?: string;
   textShadow?: boolean;
   textShadowColor?: string;
+  textShadowSize?: string; // nova prop
 }
 
 const Text = styled.p<TextProps>`
@@ -27,14 +28,14 @@ const Text = styled.p<TextProps>`
   letter-spacing: ${({ letterSpacing }) => letterSpacing || "normal"};
   max-width: ${({ maxWidth }) => maxWidth || "none"};
 
-  ${({ textShadow, textShadowColor }) =>
+  ${({ textShadow, textShadowColor, textShadowSize }) =>
     textShadow &&
     `
     text-shadow: 
-      -1px -1px 0 ${textShadowColor || "#000"}, 
-      1px -1px 0 ${textShadowColor || "#000"}, 
-      -1px 1px 0 ${textShadowColor || "#000"}, 
-      1px 1px 0 ${textShadowColor || "#000"};
+      -${textShadowSize || "1px"} -${textShadowSize || "1px"} 0 ${textShadowColor || "#000"}, 
+      ${textShadowSize || "1px"} -${textShadowSize || "1px"} 0 ${textShadowColor || "#000"}, 
+      -${textShadowSize || "1px"} ${textShadowSize || "1px"} 0 ${textShadowColor || "#000"}, 
+      ${textShadowSize || "1px"} ${textShadowSize || "1px"} 0 ${textShadowColor || "#000"};
   `}
 `;
 
