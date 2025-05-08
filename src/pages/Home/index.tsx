@@ -1,15 +1,17 @@
 import React from "react";
 import { Box, ImageBackground, Text } from "../../components";
 import { AnimatedTitle } from "../../components/molecules";
+import videoBG from "../../assets/videos/videoBG.mp4";
 
 const Home: React.FC = () => {
-
   return (
     <ImageBackground
       width="100vw"
       height="100vh"
-      backgroundImage="/src/assets/images/field-bg.jpg"
-      overlayColor="rgba(0, 0, 0, 0)"
+      backgroundVideo={videoBG}
+      overlayColor="rgba(0, 0, 0, 0.0)"
+      justifyContent="center"
+      alignItems="center"
     >
       <Box
         width="100%"
@@ -18,9 +20,9 @@ const Home: React.FC = () => {
         justifyContent="center"
         gap="5px"
       >
-        <AnimatedTitle text="PPORTFÓLIO" />
+        <AnimatedTitle text="PPORTFÓLIO" loop={true} />
         <Text
-          fontFamily={"Cormorant SC"}
+          fontFamily={"EB Garamond"}
           fontSize={"1.5rem"}
           fontWeight="500"
           color={"#dcd7d7"}

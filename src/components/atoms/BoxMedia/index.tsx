@@ -71,6 +71,7 @@ const BackgroundVideo = styled.video`
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  pointer-events: none;
 `;
 
 const Overlay = styled.div<{ overlayColor?: string }>`
