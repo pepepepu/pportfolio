@@ -42,7 +42,6 @@ const Box = styled.div<BoxProps>`
   border: ${({ border }) => border || "none"};
   box-shadow: ${({ boxShadow }) => boxShadow || "none"};
   position: ${({ position }) => position || "relative"};
-  zindex: ${({ zIndex }) => zIndex || 0};
 `;
 
 export default Box;
