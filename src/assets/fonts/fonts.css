@@ -142,3 +142,12 @@
   font-weight: 700;
   font-style: normal;
 }
+
+/* Jersey 10 */
+
+@font-face {
+  font-family: "Jersey 10";
+  src: url("./Jersey10/Jersey10-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}

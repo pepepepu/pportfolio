@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import React from "react";
 
+type Size = string | number;
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  width?: Size;
+  height?: Size;
   background?: string;
   color?: string;
   padding?: string;
@@ -16,7 +20,14 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
 }
 
+const formatSize = (value?: Size) => {
+  if (typeof value === "number") return `${value}px`;
+  return value || "auto";
+};
+
 const StyledButton = styled.button<ButtonProps>`
+  width: ${({ width }) => formatSize(width)};
+  height: ${({ height }) => formatSize(height)};
   background: ${({ background }) => background || "#333"};
   color: ${({ color }) => color || "#fff"};
   padding: ${({ padding }) => padding || "10px 20px"};

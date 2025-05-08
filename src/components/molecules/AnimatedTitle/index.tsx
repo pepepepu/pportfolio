@@ -85,10 +85,13 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
 
       // Se for loop, reinicia após a última animação
       if (loopRef.current) {
-        const totalDelay = spans.length * 0.1 + 3 * 0.3 + 0.5;
+        // Tempo total de surgimento das letras + 5s de pausa antes do loop
+        const totalDelay = spans.length * 0.1 + 3 * 0.3 + 0.5 + 5;
+
         gsap.delayedCall(totalDelay, () => {
           startAnimation();
         });
+
       }
     };
 

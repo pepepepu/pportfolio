@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 type Size = string | number;
 
@@ -19,6 +19,8 @@ interface BoxProps {
   boxShadow?: string;
   position?: string;
   zIndex?: number;
+  boxWithHover?: boolean;
+  hoverBackground?: string;
 }
 
 const formatSize = (value?: Size) => {
@@ -42,6 +44,16 @@ const Box = styled.div<BoxProps>`
   border: ${({ border }) => border || "none"};
   box-shadow: ${({ boxShadow }) => boxShadow || "none"};
   position: ${({ position }) => position || "relative"};
+
+  transition: background 0.9s ease; // ✅ suaviza a transição
+
+  ${({ boxWithHover, hoverBackground }) =>
+    boxWithHover &&
+    css`
+      &:hover {
+        background: ${hoverBackground || "rgba(0, 0, 0, 0.0)"};
+      }
+    `}
 `;
 
 export default Box;
