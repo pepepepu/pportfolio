@@ -141,7 +141,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
             display: "inline-block",
             cursor: "pointer",
             margin: 0,
-            padding: 0
+            padding: 0,
           }}
         >
           <span
