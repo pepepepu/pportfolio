@@ -16,6 +16,7 @@ interface BoxProps {
   gap?: string;
   color?: string;
   border?: string;
+  overflow?: string;
   boxShadow?: string;
   position?: string;
   zIndex?: number;
@@ -44,6 +45,7 @@ const Box = styled.div<BoxProps>`
   border: ${({ border }) => border || "none"};
   box-shadow: ${({ boxShadow }) => boxShadow || "none"};
   position: ${({ position }) => position || "relative"};
+  overflow: ${({ overflow }) => overflow || "hidden"};
 
   transition: background 0.9s ease; // ✅ suaviza a transição
 

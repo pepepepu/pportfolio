@@ -48,8 +48,14 @@ const StyledButton = styled.button<ButtonProps>`
   }
 `;
 
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
-  return <StyledButton {...rest}>{children}</StyledButton>;
-};
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ children, ...rest }, ref) => {
+  return (
+    <StyledButton ref={ref} {...rest}>
+      {children}
+    </StyledButton>
+  );
+});
+
+Button.displayName = "Button"; // evita warning com forwardRef
 
 export default Button;

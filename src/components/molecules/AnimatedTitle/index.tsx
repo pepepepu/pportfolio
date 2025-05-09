@@ -127,10 +127,14 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
       style={{
         fontFamily,
         fontWeight: 400,
-        fontSize,
+        fontSize: `clamp(3rem, 8vw, ${fontSize})`, // ← responsivo
         color,
         display: "flex",
+        flexWrap: "wrap", // ← permite quebra
         lineHeight: 1,
+        overflow: "hidden", // ← evita transbordamento
+        maxWidth: "100%", // ← limita à tela
+        wordBreak: "break-word", // ← quebra se necessário
       }}
     >
       {text.split("").map((char, index) => (
