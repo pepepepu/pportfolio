@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Box, Button, ImageBackground, Text } from "../../components";
-import { AnimatedTitle } from "../../components/molecules";
-import videoBG from "../../assets/videos/videoBG.mp4";
-import videoGlitch from "../../assets/videos/tvGlitch.mp4";
 import { useNavigate } from "react-router-dom";
+import videoBG from "../../assets/videos/videoBG.mp4";
+import { Box, Button, ImageBackground, Text } from "../../components";
+import { AnimatedTitle, VideoGlitchTransition } from "../../components/molecules";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -137,24 +136,7 @@ const Home: React.FC = () => {
 
       {/* DIV DO GLITCH */}
       {showGlitch && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            overflow: "hidden",
-            zIndex: 9999,
-          }}
-        >
-          <video
-            src={videoGlitch}
-            autoPlay
-            muted
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </div>
+        <VideoGlitchTransition />
       )}
 
       {/* DIV DE TRANSIÇÃO COM FUNDO #3808e9 */}

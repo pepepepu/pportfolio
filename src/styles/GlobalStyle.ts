@@ -15,4 +15,5 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #fff;
     color: #000;
   }
+  
 `;

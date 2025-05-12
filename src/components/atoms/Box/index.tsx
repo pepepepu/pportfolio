@@ -1,6 +1,13 @@
 import styled, { css } from "styled-components";
 
 type Size = string | number;
+type GradientType = "linear" | "radial";
+
+type GradientBackground = {
+  type?: GradientType; // "linear" (padrão) ou "radial"
+  direction?: string; // para linear: "to right", etc. — para radial: "circle at center", etc.
+  colors: string[];
+};
 
 interface BoxProps {
   width?: Size;
@@ -22,6 +29,10 @@ interface BoxProps {
   zIndex?: number;
   boxWithHover?: boolean;
   hoverBackground?: string;
+  gradientBackground?: GradientBackground;
+
+  parallelogram?: boolean;
+  skewAngle?: number; // em graus
 }
 
 const formatSize = (value?: Size) => {
@@ -29,12 +40,22 @@ const formatSize = (value?: Size) => {
   return value || "auto";
 };
 
+const generateBoxGradient = (gradient?: GradientBackground) => {
+  if (!gradient || !gradient.colors?.length) return undefined;
+  const type = gradient.type || "linear";
+  const direction = gradient.direction || (type === "radial" ? "circle at center" : "to right");
+  const colors = gradient.colors.join(", ");
+  return `${type}-gradient(${direction}, ${colors})`;
+};
+
+
 const Box = styled.div<BoxProps>`
   width: ${({ width }) => formatSize(width)};
   height: ${({ height }) => formatSize(height)};
   padding: ${({ padding }) => padding || "0"};
   margin: ${({ margin }) => margin || "0"};
-  background: ${({ background }) => background || "transparent"};
+  background: ${({ gradientBackground, background }) =>
+    generateBoxGradient(gradientBackground) || background || "transparent"};
   border-radius: ${({ borderRadius }) => borderRadius || "0"};
   display: ${({ display }) => display || "flex"};
   justify-content: ${({ justifyContent }) => justifyContent || "center"};
@@ -46,8 +67,7 @@ const Box = styled.div<BoxProps>`
   box-shadow: ${({ boxShadow }) => boxShadow || "none"};
   position: ${({ position }) => position || "relative"};
   overflow: ${({ overflow }) => overflow || "hidden"};
-
-  transition: background 0.9s ease; // ✅ suaviza a transição
+  transition: background 0.9s ease;
 
   ${({ boxWithHover, hoverBackground }) =>
     boxWithHover &&
@@ -55,6 +75,12 @@ const Box = styled.div<BoxProps>`
       &:hover {
         background: ${hoverBackground || "rgba(0, 0, 0, 0.0)"};
       }
+    `}
+
+  ${({ parallelogram, skewAngle }) =>
+    parallelogram &&
+    css`
+      transform: skewX(${skewAngle ?? 20}deg);
     `}
 `;
 
