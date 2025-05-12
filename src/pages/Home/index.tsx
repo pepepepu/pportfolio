@@ -47,13 +47,9 @@ const Home: React.FC = () => {
                 navigate("/projetos");
               }, 3000);
             }, 3000); // glitch dura 3s (de 3s até 6s)
-
           }, 1000); // espera até 3s total
-
         }, 500); // glitch dura 0.5s
-
       }, 1000); // espera até 1.5s
-
     }, 500); // glitch dura 0.5s
   };
 
@@ -74,7 +70,11 @@ const Home: React.FC = () => {
           justifyContent={"space-between"}
           gap={"5px"}
         >
-          <Box width={"90%"} justifyContent={"space-between"} flexDirection={"row"}>
+          <Box
+            width={"90%"}
+            justifyContent={"space-between"}
+            flexDirection={"row"}
+          >
             <Button background={"transparent"} hoverBackground={"transparent"}>
               <Text fontSize={"1.2rem"} color={"#393434"} fontWeight={"600"} />
             </Button>
@@ -83,8 +83,14 @@ const Home: React.FC = () => {
               hoverBackground={"transparent"}
               onClick={handleProjetosClick}
               padding={"0px"}
+              disabled={showGlitch}
             >
-              <Text fontSize={"1.2rem"} color={"#dbdbd7"} fontWeight={"600"} emptyButton>
+              <Text
+                fontSize={"1.2rem"}
+                color={"#dbdbd7"}
+                fontWeight={"600"}
+                emptyButton
+              >
                 Projetos
               </Text>
             </Button>
@@ -92,14 +98,36 @@ const Home: React.FC = () => {
 
           <AnimatedTitle text={"PPORTFÓLIO"} loop />
 
-          <Box width={"90%"} justifyContent={"space-between"} flexDirection={"row"}>
-            <Button background={"transparent"} hoverBackground={"transparent"} padding={"0px"}>
-              <Text fontSize={"1.2rem"} color={"#dbdbd7"} fontWeight={"600"} emptyButton>
+          <Box
+            width={"90%"}
+            justifyContent={"space-between"}
+            flexDirection={"row"}
+          >
+            <Button
+              background={"transparent"}
+              hoverBackground={"transparent"}
+              padding={"0px"}
+            >
+              <Text
+                fontSize={"1.2rem"}
+                color={"#dbdbd7"}
+                fontWeight={"600"}
+                emptyButton
+              >
                 Quem sou eu
               </Text>
             </Button>
-            <Button background={"transparent"} hoverBackground={"transparent"} padding={"0px"}>
-              <Text fontSize={"1.2rem"} color={"#dbdbd7"} fontWeight={"600"} emptyButton>
+            <Button
+              background={"transparent"}
+              hoverBackground={"transparent"}
+              padding={"0px"}
+            >
+              <Text
+                fontSize={"1.2rem"}
+                color={"#dbdbd7"}
+                fontWeight={"600"}
+                emptyButton
+              >
                 Contato
               </Text>
             </Button>

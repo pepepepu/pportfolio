@@ -20,7 +20,8 @@ interface TextProps {
 const Text = styled.p<TextProps>`
   font-size: ${({ fontSize }) => fontSize || "1rem"};
   font-weight: ${({ fontWeight }) => fontWeight || "normal"};
-  font-family: ${({ fontFamily }) => (fontFamily ? `"${fontFamily}"` : '"EB Garamond"')};
+  font-family: ${({ fontFamily }) =>
+    fontFamily ? `"${fontFamily}"` : '"EB Garamond"'};
   color: ${({ color }) => color || "inherit"};
   margin: ${({ margin }) => margin || "0"};
   padding: ${({ padding }) => padding || "0"};
@@ -36,10 +37,18 @@ const Text = styled.p<TextProps>`
     textShadow &&
     `
     text-shadow: 
-      -${textShadowSize || "1px"} -${textShadowSize || "1px"} 0 ${textShadowColor || "#000"}, 
-      ${textShadowSize || "1px"} -${textShadowSize || "1px"} 0 ${textShadowColor || "#000"}, 
-      -${textShadowSize || "1px"} ${textShadowSize || "1px"} 0 ${textShadowColor || "#000"}, 
-      ${textShadowSize || "1px"} ${textShadowSize || "1px"} 0 ${textShadowColor || "#000"};
+      -${textShadowSize || "1px"} -${textShadowSize || "1px"} 0 ${
+      textShadowColor || "#000"
+    }, 
+      ${textShadowSize || "1px"} -${textShadowSize || "1px"} 0 ${
+      textShadowColor || "#000"
+    }, 
+      -${textShadowSize || "1px"} ${textShadowSize || "1px"} 0 ${
+      textShadowColor || "#000"
+    }, 
+      ${textShadowSize || "1px"} ${textShadowSize || "1px"} 0 ${
+      textShadowColor || "#000"
+    };
   `}
 
   ${({ emptyButton, color }) =>
