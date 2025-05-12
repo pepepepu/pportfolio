@@ -6,32 +6,38 @@ interface ColorButtonProps {
   hoverBackgroundColor?: string;
   text?: string;
   onClick: React.MouseEventHandler<HTMLDivElement>;
+  isSelected?: boolean;
 }
 
-const ColorButton: React.FC<ColorButtonProps> = ({ backgroundColor, hoverBackgroundColor, text, onClick }) => {
-  return (
-    <Button background={"transparent"} hoverBackground={"transparent"}>
-      <Box flexDirection={"column"} gap="10px">
-        <Box
-          width={110} height={110}
-          borderRadius={"100px"}
-          background={backgroundColor}
-          hoverBackground={hoverBackgroundColor}
-          boxWithHover
-          border={"1px black solid"}
-          onClick={onClick}
-        />
-        <Text
-          fontFamily={"Jersey 10"}
-          color={"#EFEFEF"}
-          fontSize={"1.5rem"}
-          textShadow
-        >
-          {text}
-        </Text>
-      </Box>
-    </Button>
-  )
-}
+// Usando forwardRef para expor a referência ao elemento de clique
+const ColorButton = React.forwardRef<HTMLDivElement, ColorButtonProps>(
+  ({ backgroundColor, hoverBackgroundColor, text, onClick, isSelected }, ref) => {
+    return (
+      <Button background={"transparent"} hoverBackground="transparent">
+        <Box flexDirection="column" gap="10px">
+          <Box
+            ref={ref}
+            width={110}
+            height={110}
+            borderRadius="100px"
+            background={backgroundColor}
+            hoverBackground={hoverBackgroundColor}
+            boxWithHover
+            border={"1px solid black"} // destaque visual
+            onClick={onClick}
+          />
+          <Text
+            fontFamily={"VCR OSD Mono"}
+            color="#EFEFEF"
+            fontSize="1.3rem"
+            textShadow
+          >
+            {text}
+          </Text>
+        </Box>
+      </Button>
+    );
+  }
+);
 
 export default ColorButton;

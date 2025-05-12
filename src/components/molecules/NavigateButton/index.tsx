@@ -4,7 +4,6 @@ import { Box, Text, Button } from "../..";
 interface NavigateButtonProps {
   color?: string;
   fontSize?: string;
-  fontFamily?: string;
   text?: string;
   textShadowSize?: string; onClick?:
   React.MouseEventHandler<HTMLButtonElement>;
@@ -18,7 +17,6 @@ const NavigateButton: React.FC<NavigateButtonProps> = ({
   text,
   onClick,
   textShadowSize,
-  fontFamily,
   align,
   emptyButton,
 }) => {
@@ -32,9 +30,9 @@ const NavigateButton: React.FC<NavigateButtonProps> = ({
     >
       <Box width={"100%"} alignItems={align}>
         <Text
-          fontFamily={fontFamily}
+          fontFamily={"VCR OSD Mono"}
           color={color ?? "#EFEFEF"}
-          fontSize={fontSize ?? "1.5rem"}
+          fontSize={fontSize ?? "1.2rem"}
           textShadow
           textShadowSize={textShadowSize}
           emptyButton={emptyButton ?? true}
