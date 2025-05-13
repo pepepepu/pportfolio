@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Projetos from "../pages/Projetos";
 import StartScreen from "../pages/StartScreen";
 import Projeto01 from "../pages/Projetos/Projeto01";
+import Projeto02 from "../pages/Projetos/Projeto02";
 
 const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AppRoutes = () => {
 
       <Route path="/projetos" element={<Projetos />} />
       <Route path="/projetos/projeto01" element={<Projeto01 />} />
+      <Route path="/projetos/projeto02" element={<Projeto02 />} />
 
     </Routes>
   );

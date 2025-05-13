@@ -28,7 +28,7 @@ const formatSize = (value?: Size) => {
 const StyledButton = styled.button<ButtonProps>`
   width: ${({ width }) => formatSize(width)};
   height: ${({ height }) => formatSize(height)};
-  background: ${({ background }) => background || "#333"};
+  background: ${({ background }) => background || "transparent"};
   color: ${({ color }) => color || "#fff"};
   padding: ${({ padding }) => padding || "10px 20px"};
   border: ${({ border }) => border || "none"};
@@ -43,7 +43,7 @@ const StyledButton = styled.button<ButtonProps>`
   gap: 0.5rem;
 
   &:hover {
-    background: ${({ hoverBackground }) => hoverBackground || "#555"};
+    background: ${({ hoverBackground }) => hoverBackground || "transparent"};
     color: ${({ hoverColor }) => hoverColor || "#fff"};
   }
 `;

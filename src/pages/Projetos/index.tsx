@@ -14,6 +14,7 @@ const Projetos: React.FC = () => {
   const buttons = [
     {
       text: "maMusic",
+      channelText: "[C01]",
       onClick: () => {
         setShowGlitch(true);
         setTimeout(() => {
@@ -25,18 +26,26 @@ const Projetos: React.FC = () => {
     },
     {
       text: "BREEZE",
-      onClick: () => null,
+      channelText: "[C02]",
+      onClick: () => {
+        setShowGlitch(true);
+        setTimeout(() => {
+          navigate("projeto02");
+        }, 400); // mesmo tempo que a animação de glitch
+      },
       background: "#00d0ff",
       hover: "#ff00ee",
     },
     {
       text: "TeamAPP",
+      channelText: "[C03]",
       onClick: () => null,
       background: "#FFFF00",
       hover: "#a200ff",
     },
     {
       text: "fann_",
+      channelText: "[C04]",
       onClick: () => null,
       background: "#00FF00",
       hover: "#0073ff",
@@ -78,9 +87,9 @@ const Projetos: React.FC = () => {
           align={"flex-start"}
         />
 
-        <Box width={"5%"}>
-          <Text fontSize={"2rem"} color={"#FFF"} textShadow>
-            +
+        <Box>
+          <Text fontSize={"1rem"} color={"#FFF"} fontFamily={"VCR OSD Mono"} textShadow>
+            Utilize os botões de navegação para interagir
           </Text>
         </Box>
 
@@ -111,6 +120,7 @@ const Projetos: React.FC = () => {
               hoverBackgroundColor={btn.hover}
               onClick={btn.onClick}
               text={btn.text}
+              channelText={btn.channelText}
               isSelected={index === selectedIndex}
             />
           ))}

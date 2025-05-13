@@ -160,10 +160,9 @@ const Home: React.FC = () => {
         >
           {showNoSignal && (
             <Text
-              fontFamily={"Jersey 10"}
-              fontSize={"3rem"}
+              fontFamily={"VCR OSD Mono"}
+              fontSize={"2rem"}
               color={"#FFF"}
-              textShadowSize={"2px"}
               textShadow
             >
               NO SIGNAL

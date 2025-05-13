@@ -22,6 +22,9 @@ interface TextProps {
   emptyButton?: boolean;
   gradientText?: GradientText;
   gradientTextShadow?: boolean | string;
+  fitText?: boolean;            // novo
+  minFontSize?: string;         // novo
+  maxFontSize?: string;         // novo
 }
 
 const generateTextGradient = (gradientText?: GradientText) => {
@@ -32,7 +35,10 @@ const generateTextGradient = (gradientText?: GradientText) => {
 };
 
 const Text = styled.p<TextProps>`
-  font-size: ${({ fontSize }) => fontSize || "1rem"};
+  font-size: ${({ fitText, minFontSize, maxFontSize, fontSize }) =>
+    fitText
+      ? `clamp(${minFontSize || "1rem"}, ${fontSize || "2.5vw"}, ${maxFontSize || "3rem"})`
+      : fontSize || "1rem"};
   font-weight: ${({ fontWeight }) => fontWeight || "normal"};
   font-family: ${({ fontFamily }) =>
     fontFamily ? `"${fontFamily}"` : '"EB Garamond"'};
@@ -40,13 +46,24 @@ const Text = styled.p<TextProps>`
     gradientText ? "transparent" : color || "inherit"};
   margin: ${({ margin }) => margin || "0"};
   padding: ${({ padding }) => padding || "0"};
-  text-align: ${({ textAlign }) => textAlign || "left"};
+  text-align: ${({ textAlign }) => textAlign || "center"};
   line-height: ${({ lineHeight }) => lineHeight || "normal"};
   letter-spacing: ${({ letterSpacing }) => letterSpacing || "normal"};
   max-width: ${({ maxWidth }) => maxWidth || "none"};
   position: relative;
   display: inline-block;
+  overflow: hidden;
   cursor: ${({ emptyButton }) => (emptyButton ? "pointer" : "default")};
+
+  ${({ fitText, minFontSize, maxFontSize, fontSize }) =>
+    fitText &&
+    css`
+      font-size: clamp(
+        ${minFontSize || "0.75rem"},
+        ${fontSize || "2vw"},
+        ${maxFontSize || "2rem"}
+      );
+    `}
 
   ${({ textShadow, textShadowColor, textShadowSize }) => {
     if (typeof textShadow === "string") {
@@ -87,7 +104,7 @@ const Text = styled.p<TextProps>`
       }
     `}
 
-    ${({ gradientText, gradientTextShadow }) => {
+  ${({ gradientText, gradientTextShadow }) => {
     if (!gradientText) return "";
 
     const gradient = generateTextGradient(gradientText);
@@ -95,8 +112,8 @@ const Text = styled.p<TextProps>`
       typeof gradientTextShadow === "string"
         ? `filter: drop-shadow(${gradientTextShadow});`
         : gradientTextShadow
-        ? `filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));`
-        : "";
+          ? `filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));`
+          : "";
 
     return css`
       background: ${gradient};

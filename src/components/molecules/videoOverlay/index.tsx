@@ -3,9 +3,10 @@ import { Box } from "../..";
 
 interface videoLinkProps {
   videoLink?: string;
+  opacity?: number;
 }
 
-const videoOverlay: React.FC<videoLinkProps> = ({ videoLink }) => {
+const videoOverlay: React.FC<videoLinkProps> = ({ videoLink, opacity }) => {
   return (
     <Box
       width="100vw"
@@ -23,7 +24,7 @@ const videoOverlay: React.FC<videoLinkProps> = ({ videoLink }) => {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          opacity: 0.03
+          opacity: opacity ? opacity : 0.03
         }}
       />
     </Box>
