@@ -20,7 +20,7 @@ const Projeto01: React.FC = () => {
       text: "Voltar", onClick: () => {
         setShowGlitch(true);
         setTimeout(() => {
-          navigate(-1);
+          navigate("/projetos");
         }, 400); // mesmo tempo que a animação de glitch
       },
     }

@@ -18,7 +18,7 @@ const Projetos: React.FC = () => {
       onClick: () => {
         setShowGlitch(true);
         setTimeout(() => {
-          navigate("projeto01");
+          navigate("/projeto01");
         }, 400); // mesmo tempo que a animação de glitch
       },
       background: "#FF0000",
@@ -30,7 +30,7 @@ const Projetos: React.FC = () => {
       onClick: () => {
         setShowGlitch(true);
         setTimeout(() => {
-          navigate("projeto02");
+          navigate("/projeto02");
         }, 400); // mesmo tempo que a animação de glitch
       },
       background: "#00d0ff",

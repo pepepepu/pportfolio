@@ -13,8 +13,8 @@ const AppRoutes = () => {
       <Route path="/start" element={<StartScreen />} />
 
       <Route path="/projetos" element={<Projetos />} />
-      <Route path="/projetos/projeto01" element={<Projeto01 />} />
-      <Route path="/projetos/projeto02" element={<Projeto02 />} />
+      <Route path="/projeto01" element={<Projeto01 />} />
+      <Route path="/projeto02" element={<Projeto02 />} />
 
     </Routes>
   );

@@ -131,7 +131,7 @@ const Projeto02: React.FC = () => {
               onClick={() => {
                 setShowGlitch(true);
                 setTimeout(() => {
-                  navigate(-1);
+                  navigate("/projetos");
                 }, 400)
               }}
             >
