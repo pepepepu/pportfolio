@@ -93,7 +93,7 @@ const Projeto02: React.FC = () => {
                   minFontSize={"1.1vw"}
                   maxFontSize={"1.5vw"}
                 >
-                  Você precisa controlar o uso do seu ar condicionado para evitar gastos? Não se preocupe! Utilize o App Breeze e se livre de todos os problemas
+                  Você precisa controlar o uso do seu ar condicionado para evitar gastos? Não se preocupe! Utilize o aPP Breeze e se livre de todos os problemas
                 </Text>
 
                 <Text
@@ -115,14 +115,14 @@ const Projeto02: React.FC = () => {
           <Box width={"100%"} height={"28%"} flexDirection={"row"} justifyContent={"space-between"} gap={"25px"}>
             <Text
               fontFamily={"Times New Roman"}
-              fontSize={"8vw"}
+              fontSize={"7.8vw"}
               fitText
               minFontSize={"5vw"}
               maxFontSize={"8vw"}
               textShadow={"2px 2px 0px rgba(0,0,0,0.8)"}
               color={"#EDDC84"}
             >
-              www.breeze.ar.com.br
+              www.breeze.pp.com.br
             </Text>
 
             <Button
