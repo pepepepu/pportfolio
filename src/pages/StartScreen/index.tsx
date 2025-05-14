@@ -1,23 +1,32 @@
 import gsap from "gsap";
-import React, { useEffect, useRef } from "react";
-import { Box, Text } from "../../components";
+import React, { useEffect, useRef, useState } from "react";
+import { Box, Text, VideoGlitchTransition } from "../../components";
+import { useNavigate } from "react-router-dom";
 
 const StartScreen: React.FC = () => {
   const textRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+  const [showGlitch, setShowGlitch] = useState(false);
+
+  setTimeout(() => {
+    setShowGlitch(true);
+    setTimeout(() => {
+      navigate("/home");
+    }, 900)
+  }, 15000)
 
   const fonts = [
     "Cormorant SC",
     "Courier New",
     "Georgia",
-    "Pinyon Script",
     "Times New Roman",
     "Verdana",
-    "Pinyon Script",
     "Futura",
     "Monaco",
     "Lucida Console",
     "Cinzel Decorative",
-    "Pinyon Script",
+    "Jersey 10",
+    "VCR OSD Mono",
   ];
 
   useEffect(() => {
@@ -28,28 +37,29 @@ const StartScreen: React.FC = () => {
     const animateFont = () => {
       gsap.to(textRef.current!, {
         fontFamily: fonts[i % fonts.length],
-        duration: 0.1,
+        duration: 0.18,
         ease: "power2.inOut",
         onComplete: () => {
           i++;
-          setTimeout(animateFont, 10); // espera antes da próxima troca
+          setTimeout(animateFont, 10);
         },
       });
     };
 
-    animateFont(); // inicia animação
+    animateFont();
   }, []);
 
   return (
-    <Box width="100%" height="100%" padding="20px" gap="5px">
+    <Box width={"100vw"} height={"100vh"} background={"#3004cf"}>
       <Text
         ref={textRef}
         color={"#ffff00"}
-        fontWeight={"700"}
+        fontWeight={"600"}
         fontSize={"1.2rem"}
       >
-        i want 2 be here
+        carregando
       </Text>
+      {showGlitch && <VideoGlitchTransition />}
     </Box>
   );
 };

@@ -21,8 +21,8 @@ const Projetos: React.FC = () => {
           navigate("/projeto01");
         }, 400); // mesmo tempo que a animação de glitch
       },
-      background: "#FF0000",
-      hover: "#ff9900",
+      background: "#FF9900",
+      hover: "#ff0000",
     },
     {
       text: "BREEZE",
@@ -34,22 +34,32 @@ const Projetos: React.FC = () => {
         }, 400); // mesmo tempo que a animação de glitch
       },
       background: "#00d0ff",
-      hover: "#ff00ee",
+      hover: "#fff000",
     },
     {
       text: "TeamAPP",
       channelText: "[C03]",
-      onClick: () => null,
-      background: "#FFFF00",
-      hover: "#a200ff",
-    },
-    {
-      text: "fann_",
-      channelText: "[C04]",
-      onClick: () => null,
+      onClick: () => {
+        setShowGlitch(true);
+        setTimeout(() => {
+          navigate("/projeto03");
+        }, 400); // mesmo tempo que a animação de glitch
+      },
       background: "#00FF00",
-      hover: "#0073ff",
+      hover: "#bf00ff",
     },
+    // {
+    //   text: "fann_",
+    //   channelText: "[C04]",
+    //   onClick: () => {
+    //     setShowGlitch(true);
+    //     setTimeout(() => {
+    //       navigate("/projeto04");
+    //     }, 400); // mesmo tempo que a animação de glitch
+    //   },
+    //   background: "#00FF00",
+    //   hover: "#0073ff",
+    // },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -107,7 +117,7 @@ const Projetos: React.FC = () => {
         </Text>
         <Box
           width={"70%"}
-          justifyContent={"space-between"}
+          justifyContent={"space-evenly"}
           flexDirection={"row"}
         >
           {buttons.map((btn, index) => (

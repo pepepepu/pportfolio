@@ -4,8 +4,8 @@ type Size = string | number;
 type GradientType = "linear" | "radial";
 
 type GradientBackground = {
-  type?: GradientType; // "linear" (padrão) ou "radial"
-  direction?: string; // para linear: "to right", etc. — para radial: "circle at center", etc.
+  type?: GradientType;
+  direction?: string;
   colors: string[];
 };
 

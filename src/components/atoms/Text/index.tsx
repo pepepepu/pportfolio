@@ -20,11 +20,13 @@ interface TextProps {
   textShadowColor?: string;
   textShadowSize?: string;
   emptyButton?: boolean;
+  line?: boolean;
   gradientText?: GradientText;
   gradientTextShadow?: boolean | string;
-  fitText?: boolean;            // novo
-  minFontSize?: string;         // novo
-  maxFontSize?: string;         // novo
+  fitText?: boolean;
+  minFontSize?: string;
+  maxFontSize?: string;
+  position?: string;
 }
 
 const generateTextGradient = (gradientText?: GradientText) => {
@@ -50,10 +52,10 @@ const Text = styled.p<TextProps>`
   line-height: ${({ lineHeight }) => lineHeight || "normal"};
   letter-spacing: ${({ letterSpacing }) => letterSpacing || "normal"};
   max-width: ${({ maxWidth }) => maxWidth || "none"};
-  position: relative;
+  position: ${({ position }) => position || "relative"};
   display: inline-block;
   overflow: hidden;
-  cursor: ${({ emptyButton }) => (emptyButton ? "pointer" : "default")};
+  white-space: nowrap;
 
   ${({ fitText, minFontSize, maxFontSize, fontSize }) =>
     fitText &&
